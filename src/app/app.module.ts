@@ -10,13 +10,7 @@ import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
 import { AnalyticsTableComponent } from './components/analytics-table/analytics-table.component';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MaterialModule } from './modules/material.module';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
-import {MatListModule} from '@angular/material/list';
-
 
 
 @NgModule({
@@ -33,19 +27,10 @@ import {MatListModule} from '@angular/material/list';
     AppRoutingModule,
     BrowserAnimationsModule,
     CommonModule,
-    MatToolbarModule,
-    MaterialModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule,
-    MatListModule
+    MaterialModule
   ],
   exports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule,
-    MatListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
