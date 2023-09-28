@@ -85,16 +85,24 @@ export class TimesheetComponent {
             + employee.thursday + employee.friday + employee.saturday + employee.sunday;
     }
 
-    deleteEmployee(index: number): void {
+    deleteEmployee(employee: Employee, index: number): void {
+      if (employee.id) {
+          this.employeeService.deleteEmployeeHours(employee);
+      }
+  
       this.employees.splice(index, 1);
-    }
+  }
 
     submit(): void {
       this.employees.forEach(employee => {
-        this.employeeService.saveEmployeeHours(employee);
+          if (employee.id) {
+              this.employeeService.updateEmployeeHours(employee);
+          } else {
+              this.employeeService.saveEmployeeHours(employee);
+          }
       });
   
       this.router.navigate(['./departments']);
-    }
+  }
     
 }
