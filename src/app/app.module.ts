@@ -12,6 +12,10 @@ import { AnalyticsTableComponent } from './components/analytics-table/analytics-
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './modules/material.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     CommonModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+AngularFirestoreModule
+
   ],
   exports: [
 
